@@ -1,12 +1,5 @@
-class Marca:
-    def __int__(self, nombre: str):
-        self._nombre = nombre
-
-    def setNombre(self, nuevoNombre):
-        self._nombre = nuevoNombre
-
-    def getNombre(self):
-        return self._nombre
+from .marca import Marca
+from .control import Control
 
 class TV:
     _numTV, = 0
@@ -45,7 +38,7 @@ class TV:
     def getVolumen(self):
         return self._volumen
 
-    def setControl(self, nuevoControl):
+    def setControl(self, nuevoControl: Control):
         self._control = nuevoControl
 
     def getControl(self):
@@ -86,42 +79,3 @@ class TV:
     def volumenDown(self):
         if 0 <= self._volumen - 1 <= 7 and self._estado:
             self._volumen -= 1
-
-class Control:
-    def __init__(self, tv: TV = None):
-        self._tv = tv
-
-    def turnOn(self):
-        if isinstance(self._tv, TV): self._TV.turnOn()
-
-    def turnOff(self):
-        if isinstance(self._tv, TV): self._TV.turnOff()
-    
-    def canalUp(self):
-        if isinstance(self._tv, TV): self._TV.canalUp()
-
-    def canalDown(self):
-        if isinstance(self._tv, TV): self._TV.canalDown()
-
-    def volumenUp(self):
-        if isinstance(self._tv, TV): self._TV.volumenUp()
-
-    def volumenDown(self):
-        if isinstance(self._TV, TV): self._TV.volumenDown()
-
-    def setCanal(self, nuevoCanal: int):
-        if isinstance(self._tv, TV): self._TV.setCanal(nuevoCanal)
-
-    def setVolumen(self, nuevoVolumen: int):
-        if isinstance(self._tv, TV): self._TV.setVolumen(nuevoVolumen)
-
-    def enlazar(self, nuevoTV: TV):
-        if isinstance(nuevoTV, TV):    
-            self._tv = nuevoTV
-            nuevoTV.setControl(self)
-
-    def setTV(self, nuevoTV):
-        self.enlazar(nuevoTV)
-
-    def getTV(self):
-        return self._tv
