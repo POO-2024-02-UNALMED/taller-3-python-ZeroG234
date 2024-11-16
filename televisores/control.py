@@ -5,36 +5,36 @@ class Control:
         self._tv = tv
 
     def turnOn(self):
-        if isinstance(self._tv, TV): self._TV.turnOn()
+        if isinstance(self._tv, TV): self._tv.turnOn()
 
     def turnOff(self):
-        if isinstance(self._tv, TV): self._TV.turnOff()
+        if isinstance(self._tv, TV): self._tv.turnOff()
     
     def canalUp(self):
-        if isinstance(self._tv, TV): self._TV.canalUp()
+        if isinstance(self._tv, TV): self._tv.canalUp()
 
     def canalDown(self):
-        if isinstance(self._tv, TV): self._TV.canalDown()
+        if isinstance(self._tv, TV): self._tv.canalDown()
 
     def volumenUp(self):
-        if isinstance(self._tv, TV): self._TV.volumenUp()
+        if isinstance(self._tv, TV): self._tv.volumenUp()
 
     def volumenDown(self):
-        if isinstance(self._TV, TV): self._TV.volumenDown()
+        if isinstance(self._tv, TV): self._tv.volumenDown()
 
     def setCanal(self, nuevoCanal: int):
-        if isinstance(self._tv, TV): self._TV.setCanal(nuevoCanal)
+        if isinstance(self._tv, TV): self._tv.setCanal(nuevoCanal)
 
     def setVolumen(self, nuevoVolumen: int):
-        if isinstance(self._tv, TV): self._TV.setVolumen(nuevoVolumen)
+        if isinstance(self._tv, TV): self._tv.setVolumen(nuevoVolumen)
 
     def enlazar(self, nuevoTV: TV):
-        if isinstance(nuevoTV, TV):    
+        if isinstance(nuevoTV, TV):
             self._tv = nuevoTV
             nuevoTV.setControl(self)
 
-    def setTV(self, nuevoTV):
+    def setTv(self, nuevoTV):
         self.enlazar(nuevoTV)
 
-    def getTV(self):
+    def getTv(self):
         return self._tv
